@@ -5,7 +5,7 @@ import { Tap } from './tap.model';
 	selector: 'tap-list',
 	template: `
 	<ul>
-		<li *ngFor="let currentTap of childTapList">{{currentTap.brewery}} {{currentTap.beer_name}}</li>
+		<li *ngFor="let currentTap of childTapList">{{currentTap.brewery}} {{currentTap.beer_name}} <button (click)="editButtonHasBeenClicked(currentTap)">Edit!</button></li>
 	</ul>
 	`
 })
@@ -13,5 +13,8 @@ import { Tap } from './tap.model';
 export class TapListComponent {
 	@Input() childTapList: Tap[];
 	@Output() clickSender = new EventEmitter();
-	
+
+	editButtonHasBeenClicked(tapToEdit: Tap) {
+		this.clickSender.emit(tapToEdit);
+	}
 }

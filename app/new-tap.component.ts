@@ -4,6 +4,7 @@ import  { Tap } from './tap.model';
 @Component({
 	selector: 'new-tap',
 	template:`
+	<hr>
 	<h2>New Tap</h2>
 	<div class="form-group">
 		<label>Brewery:</label>
