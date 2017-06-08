@@ -7,12 +7,12 @@ import { NewTapComponent } from './new-tap.component';
 import { TapListComponent } from './tap-list.component';
 import { EditTapComponent } from './edit-tap.component';
 import { PintSaleComponent } from './pint-sale.component';
-// import { CompletenessPipe } from './completeness.pipe';
+import { AlcoholContentPipe } from './alcohol-content.pipe';
 
 
 @NgModule({
   imports: [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, NewTapComponent, TapListComponent, EditTapComponent, PintSaleComponent ],
+  declarations: [ AppComponent, NewTapComponent, TapListComponent, EditTapComponent, PintSaleComponent, AlcoholContentPipe ],
   bootstrap:    [ AppComponent ]
 })
 
