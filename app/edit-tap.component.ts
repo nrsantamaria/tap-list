@@ -6,8 +6,8 @@ import  { Tap } from './tap.model';
 	template:`
 	<div>
 		<div *ngIf="childSelectedTap">
-			<h3>Edit Tap</h3>
-			<h4>{{childSelectedTap.brewery}}: {{childSelectedTap.beer_name}}</h4>
+			<h3>Edit Tap: <span class="edit-tap-name">{{childSelectedTap.brewery}}: {{childSelectedTap.beer_name}}</span></h3>
+			<br>
 			<div class="form-group">
 				<label>Brewery:</label>
 				<input class="form-control" [(ngModel)]="childSelectedTap.brewery">
@@ -28,7 +28,7 @@ import  { Tap } from './tap.model';
 				<label>Price:</label>
 				<input class="form-control" [(ngModel)]="childSelectedTap.price">
 			</div>
-			<button (click)="doneButtonClicked()">Done</button>
+			<button class="btn btn-success" (click)="doneButtonClicked()">Done</button>
 		</div>
 	</div>
 	`
