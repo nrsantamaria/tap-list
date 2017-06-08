@@ -16,6 +16,7 @@ import { Tap } from './tap.model';
 		<p>Alcohol Content: {{currentTap.alcohol}}</p>
 		<p>Current Number of Pints: {{currentTap.pints}}</p>
 		<button class="btn btn-success" (click)="editButtonHasBeenClicked(currentTap)">Edit!</button>
+		<br>
 		<pint-sale [childSelectedTap]="currentTap"></pint-sale>
 	</div>
 	`
