@@ -12,8 +12,47 @@ h2 {
 	color: rgb(229, 185, 51);
 }
 
-img {
+.jumbotron img {
 	float: center;
 	height: 150px;
 	padding-right: 0;
+}
+
+
+.tapHandle {
+	height: 200px;
+	display: inline-block;
+	position: relative;
+	margin: -5px -50px;
+	top:50%;
+	left:50%;
+}
+
+.col-sm-3 {
+	width: 300px;
+}
+
+#glass{
+	/*background-image: url("/resources/images/beer-mug-empty.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	display: inline-block;
+	height: 300px;
+	width: 100%;*/
+	z-index: 2;
+	height: 300px;
+	width: 100%;
+	position: absolute;
+}
+
+.beerGlass {
+	background-color: rgb(229, 185, 51);
+	height: 300px;
+}
+
+#gray {
+	z-index: 1;
+	height: 200px;
+	width: 300px;
+	position: absolute;
 }

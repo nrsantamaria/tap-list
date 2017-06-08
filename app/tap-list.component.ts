@@ -4,22 +4,29 @@ import { Tap } from './tap.model';
 @Component({
 	selector: 'tap-list',
 	template: `
-	<select (change)="onChange($event.target.value)">
+	<select class="form-control" (change)="onChange($event.target.value)">
 		<option value="allTaps">All Taps</option>
 		<option value="lowContent">Low Alcohol Content</option>
 		<option value="highContent">High Alcohol Content</option>
 	</select>
-	<div *ngFor="let currentTap of childTapList | alcoholContent:filterByAlcoholContent">
-		<p>Brewery: {{currentTap.brewery}}</p>
-		<p>Beer Name: {{currentTap.beer_name}}</p>
-		<p>Type: {{currentTap.type}}</p>
-		<p>Alcohol Content: {{currentTap.alcohol}}</p>
-		<p>Current Number of Pints: {{currentTap.pints}}</p>
-		<button class="btn btn-success" (click)="editButtonHasBeenClicked(currentTap)">Edit!</button>
-		<br>
-		<pint-sale [childSelectedTap]="currentTap"></pint-sale>
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-sm-3" *ngFor="let currentTap of childTapList | alcoholContent:filterByAlcoholContent">
+			<img class="tapHandle" src="./resources/images/tap-handle.png">
+			<br>
+			<br>
+				<p><strong>Brewery:</strong> {{currentTap.brewery}}</p>
+				<p><strong>Beer Name:</strong> {{currentTap.beer_name}}</p>
+				<p><strong>Type:</strong> {{currentTap.type}}</p>
+				<p><strong>Alcohol Content:</strong> {{currentTap.alcohol}}</p>
+				<p><strong>Current Number of Pints:</strong> {{currentTap.pints}}</p>
+				<button class="btn btn-success" (click)="editButtonHasBeenClicked(currentTap)">Edit!</button>
+			<br>
+			<pint-sale [childSelectedTap]="currentTap"></pint-sale>
+		</div>
 	</div>
-	`
+		`
 })
 
 export class TapListComponent {

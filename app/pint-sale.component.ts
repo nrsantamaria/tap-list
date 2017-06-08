@@ -5,8 +5,12 @@ import  { Tap } from './tap.model';
 	selector: 'pint-sale',
 	template:`
 		<div *ngIf="childSelectedTap">
+		<div class="beerGlass">
+			<img id="gray" src="/resources/images/gray.png">
+			<img id="glass" src="/resources/images/beer-mug-empty.png">
+		</div>
 			<button class="btn btn-info" (click)="pintButtonClicked()">Pint</button>
-			<button class="btn btn-default" (click)="halfgrowlButtonClicked()">Half Growler</button>
+			<button class="btn btn-default" (click)="halfgrowlButtonClicked()">1/2 Growler</button>
 			<button class="btn btn-warning" (click)="growlButtonClicked()">Growler</button>
 			<button class="btn btn-danger" (click)="oopsButtonClicked()">Undo</button>
 		</div>

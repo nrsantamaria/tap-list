@@ -18,7 +18,12 @@ import  { Tap } from './tap.model';
 			</div>
 			<div class="form-group">
 				<label>Type of Brew:</label>
-				<input class="form-control" [(ngModel)]="childSelectedTap.type">
+				<select class="form-control" [(ngModel)]="childSelectedTap.type">
+					<option value="Ale">Ale</option>
+					<option value="Lager">Lager</option>
+					<option value="Stout">Stout</option>
+					<option value="Malt">Malt</option>
+				</select>
 			</div>
 			<div class="form-group">
 				<label>ABV:</label>

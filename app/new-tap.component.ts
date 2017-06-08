@@ -4,7 +4,6 @@ import  { Tap } from './tap.model';
 @Component({
 	selector: 'new-tap',
 	template:`
-	<hr>
 	<h2>New Tap</h2>
 	<div class="form-group">
 		<label>Brewery:</label>
@@ -16,17 +15,22 @@ import  { Tap } from './tap.model';
 	</div>
 	<div class="form-group">
 		<label>Type of Brew:</label>
-		<input class="form-control" #newTypeOfBrew>
+		<select class="form-control" #newTypeOfBrew>
+			<option value="Ale">Ale</option>
+			<option value="Lager">Lager</option>
+			<option value="Stout">Stout</option>
+			<option value="Malt">Malt</option>
+		</select>
 	</div>
 	<div class="form-group">
 		<label>ABV:</label>
-		<input class="form-control" #newAlcoholContent>
+		<input class="form-control" type="number" min="1" #newAlcoholContent>
 	</div>
 	<div class="form-group">
 		<label>Price:</label>
-		<input class="form-control" #newPrice>
+		<input class="form-control" type="number" min="1" #newPrice>
 	</div>
-	<button class="btn btn-success" (click)="submitForm(newBrewery.value, newBeerName.value, newTypeOfBrew.value, newAlcoholContent.value, newPrice.value); newBrewery.value=''; newBeerName.value=''; newTypeOfBrew.value=''; newAlcoholContent.value=''; newPrice.value='';">Add</button>
+	<button class="btn btn-success" (click)="submitForm(newBrewery.value, newBeerName.value, newTypeOfBrew.value, newAlcoholContent.value, newPrice.value); newBrewery.value=''; newBeerName.value=''; newAlcoholContent.value=''; newPrice.value='';">Add</button>
 	`
 })
 

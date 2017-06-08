@@ -10,12 +10,12 @@ import { Tap } from './tap.model';
 		<h2>Beer With Speed Is What You Need</h2>
 	</div>
 	<div class="container">
-		<new-tap (newTapSender)="addTap($event)"></new-tap>
 		<div>
 			<h2>Tap List</h2>
 			<tap-list [childTapList]="masterTapList" (clickSender)="editTap($event)"></tap-list>
 		</div>
 		<hr>
+		<new-tap (newTapSender)="addTap($event)"></new-tap>
 		<edit-tap [childSelectedTap]="selectedTap" (doneButtonClickedSender)="finishedEditing()"></edit-tap>
 	</div>
 	`
