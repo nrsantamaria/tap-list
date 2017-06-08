@@ -8,6 +8,7 @@ import  { Tap } from './tap.model';
 			<button class="btn btn-info" (click)="pintButtonClicked()">Pint</button>
 			<button class="btn btn-default" (click)="halfgrowlButtonClicked()">Half Growler</button>
 			<button class="btn btn-warning" (click)="growlButtonClicked()">Growler</button>
+			<button class="btn btn-danger" (click)="oopsButtonClicked()"></button>
 		</div>
 	`
 })
@@ -26,4 +27,9 @@ export class PintSaleComponent {
 	growlButtonClicked() {
 		this.childSelectedTap.pints -=4;
 	}
+
+	oopsButtonClicked() {
+		this.childSelectedTap.pints +=1;
+	}
+
 }
