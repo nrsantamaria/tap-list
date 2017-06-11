@@ -5,20 +5,30 @@ import  { Tap } from './tap.model';
 	selector: 'pint-sale',
 	template:`
 		<div *ngIf="childSelectedTap">
-		<div class="beerGlass">
-			<img id="gray" src="/resources/images/gray.png">
-			<img id="glass" src="/resources/images/beer-mug-empty.png">
-		</div>
-			<button class="btn btn-info" (click)="pintButtonClicked()">Pint</button>
+			<div class="glassDiv">
+				<div class="beerGlass" [style.height]="getStyle()">
+					<img id="glass" src="/resources/images/beer-mug-empty.png">
+				</div>
+			</div>
+			<button class="btn btn-info" (click)= "showStyle = !showStyle;">Pint</button>
 			<button class="btn btn-default" (click)="halfgrowlButtonClicked()">1/2 Growler</button>
 			<button class="btn btn-warning" (click)="growlButtonClicked()">Growler</button>
 			<button class="btn btn-danger" (click)="oopsButtonClicked()">Undo</button>
 		</div>
 	`
 })
-
+// "pintButtonClicked()"
 export class PintSaleComponent {
 	@Input() childSelectedTap: Tap;
+	showStyle: false;
+
+	getStyle() {
+		if(this.showStyle) {
+			return "300px";
+		} else {
+			return "";
+		}
+	}
 
 	pintButtonClicked() {
 		this.childSelectedTap.pints -=1;
